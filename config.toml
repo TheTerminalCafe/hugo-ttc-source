@@ -1,0 +1,29 @@
+baseURL = 'http://ttc.com/'
+languageCode = 'en-us'
+title = "The Terminal Cafe || Your single destination for everything tech and opensource"
+summaryLength = '10'
+
+[menu]
+  [[menu.main]]
+    identifier = "news"
+    name = "News"
+    url = "/news"
+    weight = 20
+
+  [[menu.main]]
+    identifier = "tutorial"
+    name = "Tutorials"
+    url = "/tutorials"
+    weight = 30
+
+  [[menu.main]]
+    identifier = "hub"
+    name = "Hub"
+    url = "/hub"
+    weight = 40
+
+  [[menu.main]]
+    identifier = "about"
+    name = "About Us"
+    url = "/admin/about"
+    weight = 50
