@@ -31,7 +31,7 @@
                     target -> tittle of the post and date
                 -->
                 <h2 class="blog-post-title mb-1">{{ .Title }}</h2>
-                <p class="blog-post-meta">{{ .Date | time.Format ":date_long" }} 
+                <p class="blog-post-meta">{{ .Date | time.Format ":date_long" }}
             </h3>
             <!-- Article body here -->
             <!-- 
@@ -74,15 +74,18 @@
                 </div>
                 <!-- author data ends here -->
 
-                <!-- @@FIX ME : tags not working  -->
-                <!-- For tags -->
-                <!-- <div class="p-4 mb-3 bg-light rounded">
+                <div class="p-4 mb-3 bg-light rounded">
                     <h4 class="fst-italic">Tags</h4>
-                        {{ range.Params.tags }}
-                            <a href="#" class="d-inline-block mb-2 text-dark"></a>
-                        {{ end }}
+                    <!-- Goes through tags and adds links with short -->
+                    {{ with .Param "tags" }}
+                    {{ range $index, $tag := (. | sort) }}
+                    {{ with $.Site.GetPage (printf "/%s/%s" "tags" $tag) }}
+                    <a href="{{ .Permalink }}" class="badge rounded-pill bg-dark ">{{ $tag | urlize }}</a>
+                    {{ end }}
+                    {{ end }}
+                    {{ end }}
                     </a>
-                </div> -->
+                </div>
 
 
                 <div class="p-4">
@@ -117,8 +120,10 @@
             </div>
         </div>
     </div>
-    <a href="{{with .NextInSection}}{{.Permalink}}{{end}}" class="btn btn-secondary btn-lg active" role="button" aria-pressed="true">Previous Article</a>
-    <a href="{{if .PrevInSection}}{{.PrevInSection.Permalink}}{{end}}" class="btn btn-primary btn-lg active" role="button" aria-pressed="true">Next Article</a>
+    <a href="{{with .NextInSection}}{{.Permalink}}{{end}}" class="btn btn-secondary btn-lg active" role="button"
+        aria-pressed="true">Previous Article</a>
+    <a href="{{if .PrevInSection}}{{.PrevInSection.Permalink}}{{end}}" class="btn btn-primary btn-lg active"
+        role="button" aria-pressed="true">Next Article</a>
     <!-- blog body end  -->
 </div>
 
