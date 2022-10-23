@@ -1,0 +1,2 @@
+git reset .hugo_build.lock
+git rm --cached .hugo_build.lock
