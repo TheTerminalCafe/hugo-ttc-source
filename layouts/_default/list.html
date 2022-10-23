@@ -21,64 +21,47 @@
 
   <!-- start if inner body -->
   <div class="row g-5">
-    <div class="col-md-8">
-      <h3 class="pb-4 mb-4 fst-italic border-bottom">
-        From Us
-      </h3>
-      <!-- Cards for news articles for this month-->
-      <article class="blog-post">
-        <div class="row row-cols-1 row-cols-md-3 g-4">
-          {{ range.Data.Pages }}
-          <div class="col">
-            <div class="card h-100">
-              <img src="{{ .Params.thumbnail }}" preserveAspectRatio="xMidYMid" width=" 200" height="200"
-                focusable="false" class="card-img-top" alt="{{ .Params.thumbnail }}-icn-1">
-              <div class="card-body">
-                <h5 class="card-title">{{ .Title }}</h5>
-                <p class="card-text">
-                  {{ .Summary }}
-                </p>
-                <a href="{{ .RelPermalink }}" class="stretched-link"></a>
-              </div>
+    <div class="container px-4 py-5" id="custom-cards">
+      <h2 class="pb-2 border-bottom">From Us</h2>
+      <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
+        
+        <!-- cards starts from here -->
+        
+        {{ range.Data.Pages }}   
+        <div class="col">
+          <a href="{{ .RelPermalink }}" class="stretched-link" style="text-decoration: none;">
+          <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
+            style="background-image: url('{{ .Params.thumbnail }}');">
+            <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
+              <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold">{{ .Title }}</h2>
+              <ul class="d-flex list-unstyled mt-auto">
+                <li class="me-auto">
+                  <img src="/assets/core-icns/{{.Params.author}}-icn.webp" alt="{{.Params.author}}-icn" class="rounded-circle border border-white"
+                    width="32" height="32">
+                </li>
+                <li class="d-flex align-items-center me-3">
+                  <svg class="bi me-2" width="1em" height="1em">
+                    <use xlink:href="#geo-fill"></use>
+                  </svg>
+                </li>
+                <li class="d-flex align-items-center">
+                  <svg class="bi me-2" width="1em" height="1em">
+                    <use xlink:href="#calendar3"></use>
+                  </svg>
+                  <small class="badge rounded-pill bg-secondary">{{ dateFormat "Jan 2, 2006" .Date}}</small>
+                </li>
+              </ul>
             </div>
           </div>
-          {{ end }}
-        </div>
-      </article>
-      <!-- End of cards -->
-    </div>
-
-    <div class="col-md-4">
-      <!-- More from us -->
-      <div class="p-4 mb-3 bg-light rounded">
-        <h4 class="fst-italic">More from us</h4>
-        <ol class="list-unstyled">
-          <!-- Put links to cards to latest here -->
-
-          {{ range first 3 ( where .Site.Pages "Type" "in" site.Params.mainSections )}}
-          <a href="{{ .Permalink }}">
-            <div class="card mb-3" style="max-width: 540px;">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="{{ .Params.thumbnail }}" class="img-fluid rounded-start" alt="{{ .Params.thumbnail }}-ICN">
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">{{ .Title }}</h5>
-                    <!-- Get publish date -->
-                    <p class="card-text">
-                      <small class="text-muted">{{ dateFormat "Monday, Jan 2, 2006" .Date}}</small>
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
           </a>
-          {{ end }}
-          <!-- end of latest -->
+        </div>
+        {{ end }}
       </div>
-      <!-- End -->
     </div>
+
+
+
+
   </div>
   <!--  -->
 </div>
