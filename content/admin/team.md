@@ -1,6 +1,6 @@
 ---
-title: "About"
-date: 2020-09-03T17:27:59
+title: "Meet the team"
+date: 2022-10-23T12:20:59
 author: staff
 tags: ["about us"]
 layout: about

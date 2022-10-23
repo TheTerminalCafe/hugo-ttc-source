@@ -25,5 +25,5 @@ summaryLength = '10'
   [[menu.main]]
     identifier = "about"
     name = "About Us"
-    url = "/admin/about"
+    url = "/admin/team"
     weight = 50
