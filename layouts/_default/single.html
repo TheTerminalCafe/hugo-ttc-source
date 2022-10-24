@@ -92,7 +92,7 @@
                     <h4 class="fst-italic">More from us</h4>
                     <ol class="list-unstyled">
                         <!-- Put links to cards to latest here -->
-                        {{ range first 3 ( where .Site.RegularPages "Type" "in" site.Params.mainSections )}}
+                        {{ range first 3 .Site.RegularPages }}
                         <a href="{{ .Permalink }}">
                             <div class="card mb-3" style="max-width: 540px;">
                                 <div class="row g-0">
