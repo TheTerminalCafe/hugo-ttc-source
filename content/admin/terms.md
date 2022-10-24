@@ -3,6 +3,7 @@ title: "Privacy , terms and conditions"
 date: 2020-09-03T17:27:59
 author: staff
 tags: ["T&C"]
+type: "posts"
 thumbnail: /assets/images/404.png
 articleImage: /assets/images/404.png
 ---

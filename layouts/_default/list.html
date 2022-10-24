@@ -24,20 +24,21 @@
     <div class="container px-4 py-5" id="custom-cards">
       <h2 class="pb-2 border-bottom">From Us</h2>
       <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
-        
+
         <!-- cards starts from here -->
-        
-        {{ range.Data.Pages }}   
+
+        {{ range.Data.Pages }}
         <div class="col">
           <a href="{{ .RelPermalink }}" style="text-decoration: none;">
             <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
               style="background-image: url('{{ .Params.thumbnail }}');">
               <div class="d-flex flex-column h-100 p-5 pb-3 text-white text-shadow-1">
-                <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold" style="text-shadow: 0 0 2px rgb(60, 60, 60);">{{ .Title }}</h2>
+                <h2 class="pt-5 mt-5 mb-4 display-6 lh-1 fw-bold" style="text-shadow: 0 0 2px rgb(60, 60, 60);">{{
+                  .Title }}</h2>
                 <ul class="d-flex list-unstyled mt-auto">
                   <li class="me-auto">
-                    <img src="/assets/core-icns/{{.Params.author}}-icn.webp" alt="{{.Params.author}}-icn" class="rounded-circle border border-white"
-                      width="32" height="32">
+                    <img src="/assets/core-icns/{{.Params.author}}-icn.webp" alt="{{.Params.author}}-icn"
+                      class="rounded-circle border border-white" width="32" height="32">
                   </li>
                   <li class="d-flex align-items-center">
                     <small class="badge rounded-pill bg-secondary">{{ dateFormat "Jan 2, 2006" .Date}}</small>
@@ -48,14 +49,10 @@
           </a>
         </div>
         {{ end }}
+        <!-- end of cards -->
       </div>
     </div>
-
-
-
-
+    <!-- End of inner -->
   </div>
-  <!--  -->
-</div>
 
-{{ partial "footer.html" . }}
+  {{ partial "footer.html" . }}
