@@ -56,18 +56,15 @@
                         THIS NEEDS TO BE POPULATED BY THE BOT OR ANY JOB FROM MD TO HTML
                         target -> image link and name
                     -->
-                <div class="p-4 mb-3 bg-light rounded">
-                    <h4 class="fst-italic">About Author</h4>
-                    <div class="card mb-3 " style="max-width: 250px;">
-                        <div class="row g-0">
-                            <div class="col-md-4">
-                                <img src="/assets/core-icns/{{.Params.author}}-icn.webp" class="img-fluid rounded-start"
-                                    alt="{{.Params.author}}-icn">
-                            </div>
-                            <div class="col-md-8">
-                                <div class="card-body">
-                                    <h5 class="card-title">{{.Params.author}}</h5>
-                                </div>
+                <div class="card mb-3" style="max-width: 540px;">
+                    <div class="row g-0">
+                        <div class="col-md-4">
+                            <img src="/assets/core-icns/{{.Params.author}}-icn.webp" class="img-fluid rounded-start"
+                                alt="{{.Params.author}}-icn">
+                        </div>
+                        <div class="col-md-8">
+                            <div class="card-body">
+                                <h5 class="card-title" style="font-size: 25px;">{{.Params.author}}</h5>
                             </div>
                         </div>
                     </div>
@@ -93,37 +90,31 @@
                     <ol class="list-unstyled">
                         <!-- Put links to cards to latest here -->
                         {{ range first 3 .Site.RegularPages }}
-                        <a href="{{ .Permalink }}">
-                            <div class="card mb-3" style="max-width: 540px;">
-                                <div class="row g-0">
-                                    <div class="col-md-4">
-                                        <img src="{{ .Params.thumbnail }}" class="img-fluid rounded-start"
-                                            alt="{{ .Params.thumbnail }}-ICN">
-                                    </div>
-                                    <div class="col-md-8">
-                                        <div class="card-body">
-                                            <h5 class="card-title">{{ .Title }}</h5>
-                                            <!-- Get publish date -->
-                                            <p class="card-text">
-                                                <small class="text-muted">{{ dateFormat "Monday, Jan 2, 2006" .Date}}</small>
-                                            </p>
-                                        </div>
-                                    </div>
+                        <div class="card text-white bg-secondary mb-3" style="max-width: 18rem;">
+                            <a href="{{ .Permalink }}" style=" color: #FFFFFF; text-decoration: none;">
+                                <div class="card-header">{{ .Title }}</div>
+                                <div class="card-body">
+                                    <p class="card-text">{{ .Summary | safeHTML }}</p>
                                 </div>
-                            </div>
-                        </a>
+                            </a>
+                        </div>
                         {{ end }}
                         <!-- end of latest -->
+                    </ol>
                 </div>
                 <!-- End -->
 
             </div>
         </div>
     </div>
-    <a href="{{with .NextInSection}}{{.Permalink}}{{end}}" class="btn btn-secondary btn-lg active" role="button"
-        aria-pressed="true">Previous Article</a>
-    <a href="{{if .PrevInSection}}{{.PrevInSection.Permalink}}{{end}}" class="btn btn-primary btn-lg active"
-        role="button" aria-pressed="true">Next Article</a>
+    <div class="py-5 text-center">
+        <!-- Nav buttons -->
+        <a href="{{with .NextInSection}}{{.Permalink}}{{end}}" role="button" class="btn btn-primary btn">Previous
+            page</a>
+        <a href="{{if .PrevInSection}}{{.PrevInSection.Permalink}}{{end}}" role="button"
+            class="btn btn-secondary btn">Next Page</a>
+        <!-- end of button -->
+    </div>
     <!-- blog body end  -->
 </div>
 
