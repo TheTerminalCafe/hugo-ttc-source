@@ -13,7 +13,7 @@ While making our website we are leveraging the Hugo framework to generate static
  
 ## What is TTC website ?
 
-TTC short for The Terminal Cafe is a welcoming discord server for everything related to technology with other fun things sprinkled on top of it. We started on 2019 as CTT and quickly became a melting-pot for tech minded people all around the world later we rebranded our self as The Terminal Cafe. The website is just another attempt from us to make technology more accessible to everyone anywhere around the world .
+TTC short for The Terminal Cafe is a welcoming discord server for everything related to technology with other fun things sprinkled on top of it. We started on 2019 as CTT and quickly became a melting-pot for tech minded from people all around the world later we rebranded our self as The Terminal Cafe. The website is just another attempt from us to make technology more accessible to everyone anywhere around the world .
 
 ### How pages are generated ??
 
@@ -91,7 +91,7 @@ When you are adding any new article we need some meta data based on that we will
 As the name suggest this is the title of your post. Using this is mandatory
 Usage: `title: "Demo Name"` 
 
-**2. date: **
+**2. date:**
 This tag handles the date this is actually the publish date, based on it we will place it on the website lists. Use the current date as the value here. Using this is mandatory
  Usage: `date: 2021-09-03T17:27:59`
  
@@ -140,7 +140,7 @@ After the meta data and 3 dashes `---` you can write your article as standard ma
  
 # Copying
 
-Our project is licensed under GPL license so its completely opensource and free to use . If you ended up using our project don't forget to credit us along side the original repository link. Please don't use the same name as us as it will make further complications.
+Our project is licensed under GPL license so its completely opensource and free to use . If you ended up using our project don't forget to credit us along side the original repository link. Please don't use the same name as it will make further complications.
 
 # Current Contributers
 
