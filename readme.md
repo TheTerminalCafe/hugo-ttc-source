@@ -85,7 +85,7 @@ root
 	|__ Other files [DO NOT MODIFY]		
 ```
 ### Formatting
-When you are adding any new article we need some meta data based on that we will create the site. Below are the flags that you can to add in your file. 
+When you are adding any new article we need some meta data based on that we will create the site.If you are making a tutorial please remember to make the first page an index page with a table of contents. Below are the flags that you can to add in your file. 
 
 **1. title:**
 As the name suggest this is the title of your post. Using this is mandatory
@@ -100,8 +100,11 @@ Author tag is responsible for denoting who wrote this article. Please write the 
   Usage: `author: Nyn`
   
 **4. tags:**
- Tags allows us to categories the based on specific types. You can put more than one value here as with [].  Using this is not mandatory but highly recommended. 
+ Tags allows us to categories the based on specific types. You can put more than one value here as with [].  Using this is mandatory. 
+ *Note: In case its a tutorial only use ***ONE TAG*** to aviod page breaking*
+
   Usage: `tags: [gaming,cloud,news]`
+  Usage: `tags: [Programming-in-C]` (*incase of tutorial)
   
 **5. featured:**
 This handles if a post is featured in the front page. ***DO NOT TOUCH THIS VALUE***. This will be assigned by the admin team who will review your article.
@@ -123,7 +126,7 @@ As you can see this value suggests what will be the thumbnail or icon for your p
  Draft tag makes the post draft means this will not show the page anywhere default value is true. If you want to post but dont show them make it true.
   Usage: ``draft: "true"``
 
-  
+
  **Example**
  ```
  ---

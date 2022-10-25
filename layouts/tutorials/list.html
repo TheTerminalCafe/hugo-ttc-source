@@ -28,7 +28,7 @@
         <!-- cards starts from here -->
         <!-- only show the homepages of a tutorials -->
 
-        {{ range (where .Data.Pages "Type" "in" "posts") }}
+        {{ range (where .Data.Pages "Type" "in" "intro") }}
         <div class="col">
           <a href="{{ .RelPermalink }}" style="text-decoration: none;">
             <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"

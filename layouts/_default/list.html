@@ -26,7 +26,6 @@
       <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
 
         <!-- cards starts from here -->
-
         {{ range.Data.Pages }}
         <div class="col">
           <a href="{{ .RelPermalink }}" style="text-decoration: none;">
@@ -50,9 +49,10 @@
         </div>
         {{ end }}
         <!-- end of cards -->
+
       </div>
     </div>
-    <!-- End of inner -->
   </div>
+  <!-- End of inner -->
 </div>
 {{ partial "footer.html" . }}

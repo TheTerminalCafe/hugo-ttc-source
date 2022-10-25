@@ -91,7 +91,7 @@
     <!-- <div class=" py-5 text-center container bg-light" id="custom-cards"> -->
     <div class="row row-cols-1 row-cols-lg-3 align-items-stretch g-4 py-5">
         <!-- cards starts from here -->
-        {{ range first 6 (where .Site.RegularPages "Type" "in" "posts").ByDate.Reverse }}
+        {{ range first 6 (where .Site.RegularPages "Type" "in" "posts,intro").ByDate.Reverse }}
         <div class="col">
             <a href="{{ .RelPermalink }}" style="text-decoration: none;">
                 <div class="card card-cover h-100 overflow-hidden text-white bg-dark rounded-5 shadow-lg"
