@@ -118,6 +118,11 @@ As you can see this value suggests what will be the thumbnail or icon for your p
 **8.articleImage:**
  Just like the last one articleImage or banner states the image that we will use as your article's banner. ArticleImage should be placed on the same folder and same level as the main markdown file and should follow the naming convention. To use your articleImage paste the relative path so that we can pick and place in the website. Using this is mandatory
   Usage: ``articleImage: /news/pos-20221101/pos-banner-20221101.png``
+
+**9.draft:**
+ Draft tag makes the post draft means this will not show the page anywhere default value is true. If you want to post but dont show them make it true.
+  Usage: ``draft: "true"``
+
   
  **Example**
  ```
@@ -141,6 +146,24 @@ After the meta data and 3 dashes `---` you can write your article as standard ma
 # Copying
 
 Our project is licensed under GPL license so its completely opensource and free to use . If you ended up using our project don't forget to credit us along side the original repository link. Please don't use the same name as it will make further complications.
+
+# How to Run
+
+To run this project you must have hugo installed in your system. Please refer to your OS instructions on how to install hugo. 
+
+**Example**
+```
+#Fedora linux#
+sudo dnf install hugo
+```
+
+After Hugo is isntalled download the repo go inside the folder and run `hugo serve` to see the webpage. By default hugo will start it on port 1313 so the page will be on `http://localhost:1313/`.Read the terminal output for more info. Press CTRL and C to kill the server and exit.
+
+```
+git clone https://github.com/TheTerminalCafe/hugo-ttc-source.git
+cd hugo-ttc-source
+hugo serve
+```
 
 # Current Contributers
 
