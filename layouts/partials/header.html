@@ -11,6 +11,11 @@
 	{{ printf `
 	<link rel="%s" type="%s" href="%s" title="%s" />` .Rel .MediaType.Type .Permalink $.Site.Title | safeHTML }}
 	{{ end -}}
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/png" href="/assets/core-icns/icon2.png">
+	<link rel="shortcut icon" sizes="192x192" href="/assets/core-icns/icon2.png">
+	<link rel="apple-touch-icon" href="/assets/core-icns/icon2.png">
+	<!-- end -->
 </head>
 
 <body>
