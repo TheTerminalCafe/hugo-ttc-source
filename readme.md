@@ -85,7 +85,7 @@ root
 	|__ Other files [DO NOT MODIFY]		
 ```
 ### Formatting
-When you are adding any new article we need some meta data based on that we will create the site. Below are the flags that you can to add in your file. 
+When you are adding any new article we need some meta data based on that we will create the site.If you are making a tutorial please remember to make the first page an index page with a table of contents. Below are the flags that you can to add in your file. 
 
 **1. title:**
 As the name suggest this is the title of your post. Using this is mandatory
@@ -100,7 +100,8 @@ Author tag is responsible for denoting who wrote this article. Please write the 
   Usage: `author: Nyn`
   
 **4. tags:**
- Tags allows us to categories the based on specific types. You can put more than one value here as with [].  Using this is not mandatory but highly recommended. 
+ Tags allows us to categories the based on specific types. You can put more than one value here as with [].  Using this is not mandatory but highly recomended. 
+
   Usage: `tags: [gaming,cloud,news]`
   
 **5. featured:**
@@ -118,20 +119,31 @@ As you can see this value suggests what will be the thumbnail or icon for your p
 **8.articleImage:**
  Just like the last one articleImage or banner states the image that we will use as your article's banner. ArticleImage should be placed on the same folder and same level as the main markdown file and should follow the naming convention. To use your articleImage paste the relative path so that we can pick and place in the website. Using this is mandatory
   Usage: ``articleImage: /news/pos-20221101/pos-banner-20221101.png``
-  
+
+**9.draft:**
+ Draft tag makes the post draft means this will not show the page anywhere default value is true. If you want to post but dont show them make it true.
+  Usage: ``draft: "true"``
+
+**10.categories**
+ Categories specifies which type the page is. This variable is mostly used to determine the chapters.Only use ***ONE TAG*** to aviod page breaking.
+  Usage: ``categories: ['I am Hugo']``
+
+
  **Example**
  ```
- ---
-title: "I am a demo"
-date: 2022-09-03T17:27:59
-author: Nyn
-tags: [demo,code,news]
-featured: "false"
-type: "posts"
-thumbnail: /news/pos-20221101/pos-icn-20221001.png
-articleImage: /news/pos-20221101/pos-banner-20221001.png
-
 ---
+title: "WebDev With Hugo"
+date: 2021-11-11T00:00:00
+author: Nyn
+tags: [Code,Web,Hugo]
+categories: ['Hugo Development']
+featured: "false"
+type: "intro"
+thumbnail: /tutorials/hugo-20221025/hugo-icn-20221025.png
+articleImage: /tutorials/hugo-20221025/hugo-banner-20221025.png
+draft: "false"
+---
+
 ```
 
 **_Note: Always use three dashes `---` before and after putting your mata data in the markdown file_**
@@ -141,6 +153,24 @@ After the meta data and 3 dashes `---` you can write your article as standard ma
 # Copying
 
 Our project is licensed under GPL license so its completely opensource and free to use . If you ended up using our project don't forget to credit us along side the original repository link. Please don't use the same name as it will make further complications.
+
+# How to Run
+
+To run this project you must have hugo installed in your system. Please refer to your OS instructions on how to install hugo. 
+
+**Example**
+```
+#Fedora linux#
+sudo dnf install hugo
+```
+
+After Hugo is isntalled download the repo go inside the folder and run `hugo serve` to see the webpage. By default hugo will start it on port 1313 so the page will be on `http://localhost:1313/`.Read the terminal output for more info. Press CTRL and C to kill the server and exit.
+
+```
+git clone https://github.com/TheTerminalCafe/hugo-ttc-source.git
+cd hugo-ttc-source
+hugo serve
+```
 
 # Current Contributers
 
