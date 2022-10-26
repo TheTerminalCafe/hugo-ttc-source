@@ -27,3 +27,23 @@ summaryLength = '10'
     name = "About Us"
     url = "/admin/team"
     weight = 50
+
+
+[taxonomies]
+    tag = "tags"
+    category = "categories"
+
+
+
+[related]
+  includeNewer = false
+  threshold = 80
+  toLower = false
+
+  [[related.indices]]
+    name = 'categories'
+    weight = 100
+    
+  [[related.indices]]
+    name = 'tags'
+    weight = 10

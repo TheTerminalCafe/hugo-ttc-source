@@ -50,9 +50,9 @@
         <div class="col-md-4">
             <div class="position-sticky" style="top: 2rem;">
 
-                <!-- Chapters  -->
+                <!-- Chapters based on categories -->
                 <div class="p-4 mb-3 bg-light rounded">
-                    {{ $related := .Site.RegularPages.Related .}}
+                    {{ $related := site.RegularPages.RelatedIndices . "categories" }}
                     {{ with $related }}
                     <h4 class="fst-italic">Chapters</h4>
                     <ol class="list-unstyled">
@@ -157,6 +157,7 @@
             </div>
         </div>
         <!-- End of inner -->
+
     </div>
 </div>
 <!--  -->

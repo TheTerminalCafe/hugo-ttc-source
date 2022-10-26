@@ -32,20 +32,20 @@
             </div>
             <div class="carousel-item">
                 <a href="{{ ref . " /tutorials/" }}">
-                <img src="assets/core-icns/img-c-2.jpeg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>Code School</h5>
-                    <p>Want to learn how to code !! You are in the right place</p>
-                </div>
+                    <img src="assets/core-icns/img-c-2.jpeg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Code School</h5>
+                        <p>Want to learn how to code !! You are in the right place</p>
+                    </div>
                 </a>
             </div>
             <div class="carousel-item">
                 <a href="{{ ref . " /hub/" }}">
-                <img src="assets/core-icns/img-c-3.jpeg" class="d-block w-100" alt="...">
-                <div class="carousel-caption d-none d-md-block">
-                    <h5>TTC Hub</h5>
-                    <p>Fun and welcoming place for other types of discussions</p>
-                </div>
+                    <img src="assets/core-icns/img-c-3.jpeg" class="d-block w-100" alt="...">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>TTC Hub</h5>
+                        <p>Fun and welcoming place for other types of discussions</p>
+                    </div>
                 </a>
             </div>
         </div>
@@ -67,18 +67,13 @@
     {{ range (where .Site.RegularPages ".Params.featured" "in" "true").ByDate.Reverse }}
     <section class="py-5 text-center container">
         <div class="row py-lg-5 "
-            style="background-image: url('{{ .Params.articleImage }}'); background-size: contain; ">
+            style="background-image: url('{{ .Params.articleImage }}'); background-size: 100%;background-repeat: no-repeat; ">
             <div class="col-lg-6 col-md-8 mx-auto">
                 <h1 class="fw-light" style="
-                    color: aliceblue;
-                    text-shadow: 0 0 2px rgb(155, 155, 155) ;">
+                    color: rgb(0, 0, 0);
+                    text-shadow: 0 0 5px rgb(255, 255, 255) ;">
                     {{ .Title }}
                 </h1>
-                <p class="lead text-muted" style="
-                    color: rgb(255, 255, 255);
-                    text-shadow: 0 0 2px rgb(155, 155, 155) ;">
-                    {{ .Summary | safeHTML }}
-                </p>
                 <p>
                     <a href="{{ .RelPermalink }}" class="btn btn-primary my-2">Read More</a>
                 </p>
