@@ -1,6 +1,6 @@
 ---
 title: "Variables in Java"
-date: 2022-10-24T00:00:00
+date: 2022-10-25T00:00:00
 author: Rick
 tags: [Programming-in-Java]
 featured: "false"
