@@ -51,10 +51,10 @@
             <div class="position-sticky" style="top: 2rem;">
 
                 <!-- Chapters based on categories -->
+                {{ $related := site.RegularPages.RelatedIndices . "categories" }}
+                {{ with $related }}
                 <div class="p-4 mb-3 bg-light rounded">
-                    {{ $related := site.RegularPages.RelatedIndices . "categories" }}
-                    {{ with $related }}
-                    <h4 class="fst-italic">Chapters</h4>
+                    <h4 class="fst-italic">Up Comming</h4>
                     <ol class="list-unstyled">
                         <!-- Put links to chapters here -->
                         {{ range . }}
@@ -110,16 +110,25 @@
                 <!-- author data ends here -->
             </div>
         </div>
-        <div class="py-5 text-center">
-            <!-- Nav buttons -->
-            <a href="{{with .NextInSection}}{{.Permalink}}{{end}}" role="button" class="btn btn-primary btn">Previous
-                page</a>
-            <a href="{{if .PrevInSection}}{{.PrevInSection.Permalink}}{{end}}" role="button"
-                class="btn btn-secondary btn">Next Page</a>
-            <!-- end of button -->
-        </div>
 
-        <!--  -->
+        <!-- Nav buttons -->
+        <div class="py-5 text-center">
+
+            {{ $pages := where site.RegularPages "Section" .Section }}
+
+            {{ with $pages.ByLinkTitle.Reverse.Prev . }}
+            <a href="{{.Permalink}}" role="button" class="btn btn-primary btn">Previous</a>
+            {{ end }}
+
+            {{ with $pages.ByLinkTitle.Reverse.Next . }}
+            <a href="{{.Permalink}}" role="button" class="btn btn-primary btn">Next</a>
+            {{ end }}
+
+
+        </div>
+        <!-- End of buttons -->
+
+        <!-- More from us -->
         <div class="row g-5">
             <div class="container px-4 py-5" id="custom-cards">
                 <h2 class="pb-2 border-bottom">More From Us</h2>
@@ -156,7 +165,7 @@
                 </div>
             </div>
         </div>
-        <!-- End of inner -->
+        <!-- End of more -->
 
     </div>
 </div>
