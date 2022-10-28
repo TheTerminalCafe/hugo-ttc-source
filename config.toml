@@ -2,7 +2,7 @@ baseURL = 'https://www.theterminal.cafe/'
 languageCode = 'en-us'
 title = "The Terminal Cafe || Your single destination for everything tech and opensource"
 summaryLength = '10'
-
+enableEmoji = 'true'
 [menu]
   [[menu.main]]
     identifier = "news"

@@ -92,7 +92,8 @@ As the name suggest this is the title of your post. Using this is mandatory
 Usage: `title: "Demo Name"` 
 
 **2. date:**
-This tag handles the date this is actually the publish date, based on it we will place it on the website lists. Use the current date as the value here. Using this is mandatory
+This tag handles the date this is actually the publish date, based on it we will place it on the website lists. Use the current date as the value here. Using this is mandatory.
+Note when uploading a tutorial always set the date same accross all tutorial pages regardless when its written or published.
  Usage: `date: 2021-09-03T17:27:59`
  
 **3. author:**
@@ -125,9 +126,13 @@ As you can see this value suggests what will be the thumbnail or icon for your p
   Usage: ``draft: "true"``
 
 **10.categories**
- Categories specifies which type the page is. This variable is mostly used to determine the chapters.Only use ***ONE TAG*** to aviod page breaking.
+ Categories specifies which type the page is. This variable is mostly used to determine the chapters.Only use ***ONE TAG*** to aviod page breaking.This is mandatory for tutorials.
   Usage: ``categories: ['I am Hugo']``
 
+**10.linktitle**
+ Linktitle specifies which chapter the page is a tutorial. This variable should be set like tutorial name then the chapter.The first chapter the introduction one should always start with 0.Only use ***ONE TAG*** to aviod page breaking.This is mandatory for tutorials
+  Usage: ``linktitle: "java-chapter2"``
+  Usage: ``linktitle: "java-chapter0"`` (*For index pages*)
 
  **Example**
  ```
