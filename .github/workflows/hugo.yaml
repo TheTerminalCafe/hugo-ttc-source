@@ -1,0 +1,32 @@
+name: Hugo CI
+on:
+  push:
+    branches: [ "main", "edge" ]
+  pull_request:
+    branches: [ "edge" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git checkout
+        uses: actions/checkout@v3
+
+      - name: Setup hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "latest"
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Extract branch name
+        shell: bash
+        run: echo "##[set-output name=branch;]$(echo ${GITHUB_REF#refs/heads/})"
+        id: current_branch
+
+      - name: Publish Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: hugo-site-${{ steps.extract_branch.outputs.branch }}
+          path: ./public

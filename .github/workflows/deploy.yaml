@@ -1,0 +1,26 @@
+name: Deploy Site
+on:
+  workflow_run:
+    workflows: [ "Hugo CI" ]
+    types:
+      - completed
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: hugo-site-main
+
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_KEY }}
+          name: id_ed25519
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+          if_key_exists: fail
+
+      - name: Rsync Over SSH
+        run: rsync -avXz ./public ${{ secrets.USER_NAME }}@${{ secrets.HOST }}:/usr/home/${{ screts.USER_NAME }}/website
