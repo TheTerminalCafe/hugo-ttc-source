@@ -23,4 +23,4 @@ jobs:
           if_key_exists: fail
 
       - name: Rsync Over SSH
-        run: rsync -avXz ./public ${{ secrets.USER_NAME }}@${{ secrets.HOST }}:/usr/home/${{ screts.USER_NAME }}/website
+        run: rsync -avXz ./public ${{ secrets.USER_NAME }}@${{ secrets.HOST }}:/usr/home/${{ secrets.USER_NAME }}/website
