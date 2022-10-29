@@ -27,5 +27,5 @@ jobs:
       - name: Publish Artifact
         uses: actions/upload-artifact@v3
         with:
-          name: "hugo-site-${{ steps.branch_name.outputs.current_branch }}""
+          name: "hugo-site-${{ steps.branch_name.outputs.current_branch }}"
           path: ./public
