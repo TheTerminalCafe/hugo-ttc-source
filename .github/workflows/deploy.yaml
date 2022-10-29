@@ -9,20 +9,14 @@ jobs:
   deploy:
     runs-on: ubuntu-latest
     steps:
-      - name: Create Directory
-        run: |
-          mkdir public
-
       - name: Download Artifact
         uses: dawidd6/action-download-artifact@v2
-        working-directory: ./public
         with:
           workflow: hugo.yaml
           name: hugo-site-main
 
       - name: Install SSH Key
         uses: shimataro/ssh-key-action@v2
-        working-directory: /
         with:
           key: ${{ secrets.SSH_KEY }}
           name: id_ed25519
@@ -30,5 +24,4 @@ jobs:
           if_key_exists: fail
 
       - name: Rsync Over SSH
-        working-directory: /
-        run: rsync -avXz ./public ${{ secrets.USER_NAME }}@${{ secrets.HOST }}:/usr/home/${{ secrets.USER_NAME }}/website
+        run: rsync -avXz . ${{ secrets.USER_NAME }}@${{ secrets.HOST }}:/usr/home/${{ secrets.USER_NAME }}/website
