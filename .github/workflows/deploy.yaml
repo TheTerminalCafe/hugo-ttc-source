@@ -4,9 +4,12 @@ on:
     workflows: [ "Hugo CI" ]
     types:
       - completed
+    branches-ignore:
+      - "edge"
 
 jobs:
   deploy:
+    if: github.repository == 'TheTerminalCafe/hugo-ttc-source'
     runs-on: ubuntu-latest
     steps:
       - name: Download Artifact
