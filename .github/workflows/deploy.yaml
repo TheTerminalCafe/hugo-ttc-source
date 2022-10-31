@@ -1,0 +1,30 @@
+name: Deploy Site
+on:
+  workflow_run:
+    workflows: [ "Hugo CI" ]
+    types:
+      - completed
+    branches-ignore:
+      - "edge"
+
+jobs:
+  deploy:
+    if: github.repository == 'TheTerminalCafe/hugo-ttc-source'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Download Artifact
+        uses: dawidd6/action-download-artifact@v2
+        with:
+          workflow: hugo.yaml
+          name: hugo-site-main
+
+      - name: Install SSH Key
+        uses: shimataro/ssh-key-action@v2
+        with:
+          key: ${{ secrets.SSH_KEY }}
+          name: id_ed25519
+          known_hosts: ${{ secrets.KNOWN_HOSTS }}
+          if_key_exists: fail
+
+      - name: Rsync Over SSH
+        run: rsync -avXz . ${{ secrets.USER_NAME }}@${{ secrets.HOST }}:/usr/home/${{ secrets.USER_NAME }}/website

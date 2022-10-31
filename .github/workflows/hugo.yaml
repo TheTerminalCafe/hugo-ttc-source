@@ -1,0 +1,37 @@
+name: Hugo CI
+on:
+  push:
+    branches: [ "main", "edge" ]
+  pull_request:
+    branches: [ "edge" ]
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Git Checkout
+        uses: actions/checkout@v3
+
+      - name: Checkout Content Repo
+        uses: actions/checkout@v3
+        with:
+          repository: TheTerminalCafe/hugo-ttc-content
+          path: content
+
+      - name: Setup Hugo
+        uses: peaceiris/actions-hugo@v2
+        with:
+          hugo-version: "latest"
+
+      - name: Build
+        run: hugo --minify
+
+      - name: Get Branch Name
+        uses: tj-actions/branch-names@v6
+        id: branch_name
+
+      - name: Publish Artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: "hugo-site-${{ steps.branch_name.outputs.current_branch }}"
+          path: ./public
