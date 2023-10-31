@@ -26,4 +26,4 @@ Meet with our talented writing team who brings our all the wonderful content for
 | :--- | :---: |
 |----------------|------------------------------------------------------|
 |Ereshkigal (Rick)         |[Profile](https://github.com/Ereshkigal01)  |
-|Caitcat | [Profile](https://git.caitlynrosestewart.co.uk/) |
+|Caitcat | [Profile](https://github.com/CaitCatDev) |
