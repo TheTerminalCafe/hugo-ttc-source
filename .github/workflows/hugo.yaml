@@ -12,12 +12,6 @@ jobs:
       - name: Git Checkout
         uses: actions/checkout@v3
 
-      - name: Checkout Content Repo
-        uses: actions/checkout@v3
-        with:
-          repository: TheTerminalCafe/hugo-ttc-content
-          path: content
-
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
         with:
